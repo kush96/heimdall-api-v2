@@ -1,0 +1,5 @@
+[repositories]
+   local
+   artifactory: https://artifactory.joveo.com/artifactory/list/sbt-release-local/
+   mvnrepository: https://repo1.maven.org/maven2/
+   typesaferepository: https://repo.typesafe.com/typesafe/maven-releases/

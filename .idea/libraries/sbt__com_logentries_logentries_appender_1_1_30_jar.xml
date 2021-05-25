@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: com.logentries:logentries-appender:1.1.30:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.logentries/logentries-appender/jars/logentries-appender-1.1.30.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/com.logentries/logentries-appender/srcs/logentries-appender-1.1.30-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
