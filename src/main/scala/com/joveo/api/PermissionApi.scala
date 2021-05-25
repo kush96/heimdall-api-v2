@@ -26,11 +26,10 @@ class PermissionApi(permissionService: PermissionService)(implicit
                                                           serialization: Serialization,
                                                           ec: ExecutionContext) {
 
-  private val permissionPath ="permission"
-  private val permissionEndpoint = joveoSecureEndpoint.put
-    .in(permissionPath)
+  private val permissionPath = "permission"
+  private val permissionEndpoint = joveoSecureEndpoint.in(permissionPath)
 
-  val addPermission = permissionEndpoint
+  val addPermission = permissionEndpoint.post
     .in(jsonBody[PermissionDto])
     .out(jsonBody[String])
     .serverLogic { case (authUser, permDto) => {
@@ -42,7 +41,7 @@ class PermissionApi(permissionService: PermissionService)(implicit
     }
     }
 
-  val getPermissionByName = permissionEndpoint
+  val getPermissionByName = permissionEndpoint.get
     .in(query[String]("permissionName"))
     .out(jsonBody[PermissionDto])
     .serverLogic { case (authUser, permissionName) => {
@@ -53,7 +52,7 @@ class PermissionApi(permissionService: PermissionService)(implicit
     }
     }
 
-  val updatePermission = permissionEndpoint
+  val updatePermission = permissionEndpoint.put
     .in(jsonBody[PermissionDto])
     .out(jsonBody[String])
     .serverLogic { case (authUser, permDto) => {
