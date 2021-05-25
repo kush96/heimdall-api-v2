@@ -8,8 +8,7 @@ object Application extends JoveoServer {
   override val applicationId: String = "DemoApp"
   override def appHost: String = "localhost"
   override def appPort: Int = 8080
+  private val modules = new AllModules
 
-  val modules = new AllModules
-  import modules._
   override val tapirRoutes = modules.endpoints.tapirRoutes
 }

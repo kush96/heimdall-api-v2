@@ -1,10 +1,8 @@
 package com.joveo.service
 
-//import akka.actor.TypedActor.dispatcher
 import com.joveo.constants.PermissionContants.{ErrorMessages, ErrorTypes}
 import com.joveo.dao.PermissionDao
-import com.joveo.dto.PermissionDTOs.{AddUpdatePermissionDto, PermissionDto}
-import com.joveo.exception.HeimdallExceptions.{NoResourceFoundException, ResourceAlreadyExistsException}
+import com.joveo.dto.PermissionDTOs.{PermissionDto}
 import com.joveo.fna_api_utilities.core.models.{JoveoError, JoveoErrorResponse, UnauthorizedErrorResponse}
 import com.joveo.model.Permission
 

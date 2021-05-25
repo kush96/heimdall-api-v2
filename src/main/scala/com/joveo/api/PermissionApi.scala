@@ -12,6 +12,7 @@ import sttp.tapir.generic.auto.schemaForCaseClass
 import sttp.tapir.query
 
 import scala.concurrent.{ExecutionContext, Future}
+
 /*
 * TODO :
 *  1. logging : i) what all events need to be logged ?
@@ -20,14 +21,16 @@ import scala.concurrent.{ExecutionContext, Future}
 * */
 
 
-
 class PermissionApi(permissionService: PermissionService)(implicit
                                                           formats: Formats,
                                                           serialization: Serialization,
                                                           ec: ExecutionContext) {
 
-  val addPermission = joveoSecureEndpoint.post
-    .in("permission")
+  private val permissionPath ="permission"
+  private val permissionEndpoint = joveoSecureEndpoint.put
+    .in(permissionPath)
+
+  val addPermission = permissionEndpoint
     .in(jsonBody[PermissionDto])
     .out(jsonBody[String])
     .serverLogic { case (authUser, permDto) => {
@@ -38,8 +41,8 @@ class PermissionApi(permissionService: PermissionService)(implicit
       }
     }
     }
-  //logging
-  val getPermissionByName = joveoSecureEndpoint.get.in("permission")
+
+  val getPermissionByName = permissionEndpoint
     .in(query[String]("permissionName"))
     .out(jsonBody[PermissionDto])
     .serverLogic { case (authUser, permissionName) => {
@@ -49,8 +52,8 @@ class PermissionApi(permissionService: PermissionService)(implicit
       }
     }
     }
-  val updatePermission = joveoSecureEndpoint.put
-    .in("permission")
+
+  val updatePermission = permissionEndpoint
     .in(jsonBody[PermissionDto])
     .out(jsonBody[String])
     .serverLogic { case (authUser, permDto) => {
@@ -61,5 +64,6 @@ class PermissionApi(permissionService: PermissionService)(implicit
       }
     }
     }
+
   val route = List(getPermissionByName, addPermission)
 }
