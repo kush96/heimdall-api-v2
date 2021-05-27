@@ -1,6 +1,7 @@
 package com.joveo.dao.mongo
 
 import com.joveo.commons.SecretManager
+import com.joveo.model.User
 import com.joveo.model.Permission
 
 import java.net.URLEncoder
@@ -44,6 +45,7 @@ class   Mongo(config: Config, secretManager: SecretManager) {
   def customCodeRegistry() = {
     fromProviders(
       Macros.createCodecProviderIgnoreNone[Permission](),
+      Macros.createCodecProviderIgnoreNone[User]()
     )
   }
 
@@ -55,6 +57,7 @@ class   Mongo(config: Config, secretManager: SecretManager) {
   val mojoDB: MongoDatabase = mongoClient.getDatabase("mojo").withCodecRegistry(codecRegistry)
 
   val permissionsCollection: MongoCollection[Permission] = mojoDB.getCollection[Permission]("permissions")
+  val userCollection: MongoCollection[User] = mojoDB.getCollection[User]("users")
 }
 
 class JodaDateTimeCodec extends Codec[DateTime] {

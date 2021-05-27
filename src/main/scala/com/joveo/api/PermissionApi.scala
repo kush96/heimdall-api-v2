@@ -45,7 +45,7 @@ class PermissionApi(permissionService: PermissionService)(implicit
     .in(query[String]("permissionName"))
     .out(jsonBody[PermissionDto])
     .serverLogic { case (authUser, permissionName) => {
-      permissionService.getPermissionByName(permissionName) map {
+      permissionService.getPermission(permissionName) map {
         case Right(permission) => Right(PermissionDto(permissionId = permission.id, permissionName = permission.permissionName, createdBy = permission.createdBy, isAllowed = permission.isAllowed, description = permission.description))
         case Left(joveoError) => Left(joveoError)
       }
@@ -64,5 +64,5 @@ class PermissionApi(permissionService: PermissionService)(implicit
     }
     }
 
-  val route = List(getPermissionByName, addPermission)
+  val route = List(getPermissionByName, addPermission, updatePermission)
 }

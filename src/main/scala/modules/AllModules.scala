@@ -3,7 +3,7 @@ import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import com.joveo.api.{Endpoints, PermissionApi}
 import com.joveo.commons.{AWSSecretManager, Environment, SecretManager}
-import com.joveo.dao.{MongoPermissionDaoImpl, PermissionDao}
+import com.joveo.dao.MongoPermissionDaoImpl
 import com.joveo.dao.mongo.Mongo
 import com.joveo.service.PermissionService
 import com.softwaremill.macwire._

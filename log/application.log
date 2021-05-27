@@ -468,3 +468,105 @@ Caused by: java.net.ConnectException: Operation timed out
     "createdBy" : "",
     "isAllowed" : true 
 } responseBody={"errorCode":"401","message":"permission doesn't exists","errorType":""}
+[INFO] date=2021-05-25 15:38:34,129 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 15:38:34,244 application= host= thread=[cluster-ClusterId{value='60accca2e3d4197b5ee3faa5', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:22}] to localhost:27017
+[INFO] date=2021-05-25 15:38:34,250 application= host= thread=[cluster-ClusterId{value='60accca2e3d4197b5ee3faa5', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2911681}
+[INFO] date=2021-05-25 15:38:35,167 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[ERROR] date=2021-05-25 15:40:19,138 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=104203 path=/api/v1/permission method=POST statusCode=404 requestBody={
+    "permissionId" : "",
+    "permissionName" : "dummy permission",
+    "description" : "dummy permission ",
+    "createdBy" : "",
+    "isAllowed" : true 
+} responseBody={"errorCode":"invalid_endpoint","message":"The requested resource could not be found","errorType":"resource_unavailable_error"}
+[INFO] date=2021-05-25 15:41:05,908 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 15:41:06,017 application= host= thread=[cluster-ClusterId{value='60accd39e3d4197b978acbd2', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:23}] to localhost:27017
+[INFO] date=2021-05-25 15:41:06,022 application= host= thread=[cluster-ClusterId{value='60accd39e3d4197b978acbd2', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2367948}
+[INFO] date=2021-05-25 15:41:06,979 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[ERROR] date=2021-05-25 15:44:18,169 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=191463 path=/api/v1/permission method=POST statusCode=404 requestBody={
+    "permissionId" : "",
+    "permissionName" : "dummy permission",
+    "description" : "dummy permission ",
+    "createdBy" : "",
+    "isAllowed" : true 
+} responseBody={"errorCode":"invalid_endpoint","message":"The requested resource could not be found","errorType":"resource_unavailable_error"}
+[INFO] date=2021-05-25 15:45:31,652 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 15:45:31,755 application= host= thread=[cluster-ClusterId{value='60acce43e3d4197baf9383f6', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:24}] to localhost:27017
+[INFO] date=2021-05-25 15:45:31,759 application= host= thread=[cluster-ClusterId{value='60acce43e3d4197baf9383f6', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2110081}
+[INFO] date=2021-05-25 15:45:32,708 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-10] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-25 15:46:11,349 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-10] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-25 15:46:13,460 application= host= thread=[Thread-10] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:25}] to localhost:27017
+[ERROR] date=2021-05-25 15:46:14,985 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-12] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=42516 path=/api/v1/permission method=POST statusCode=400 requestBody={
+    "permissionId" : "",
+    "permissionName" : "dummy permission",
+    "description" : "dummy permission ",
+    "createdBy" : "",
+    "isAllowed" : true 
+} responseBody={"errorCode":"401","message":"Permission Already Exists","errorType":"Resource Already Exists"}
+[INFO] date=2021-05-25 15:47:52,255 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-19] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=139787 path=/api/v1/permission method=GET statusCode=200
+[INFO] date=2021-05-26 20:41:25,450 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-26 20:41:25,778 application= host= thread=[cluster-ClusterId{value='60ae651d042c9998b804af5d', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:28}] to localhost:27017
+[INFO] date=2021-05-26 20:41:25,791 application= host= thread=[cluster-ClusterId{value='60ae651d042c9998b804af5d', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2582029}
+[INFO] date=2021-05-26 20:41:26,602 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 02:15:10,524 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:15:10,665 application= host= thread=[cluster-ClusterId{value='60aeb3566ba6fba117713451', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:34}] to localhost:27017
+[INFO] date=2021-05-27 02:16:05,295 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:16:05,429 application= host= thread=[cluster-ClusterId{value='60aeb38d6ba6fba1220feca4', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:35}] to localhost:27017
+[INFO] date=2021-05-27 02:46:20,983 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:46:21,111 application= host= thread=[cluster-ClusterId{value='60aebaa449285ba15d1af051', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:36}] to localhost:27017
+[INFO] date=2021-05-27 02:47:36,542 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:49:41,817 application= host= thread=[cluster-ClusterId{value='60aebaf049285ba1812806f6', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:37}] to localhost:27017
+[INFO] date=2021-05-27 02:49:41,824 application= host= thread=[cluster-ClusterId{value='60aebaf049285ba1812806f6', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3071730}
+[INFO] date=2021-05-27 02:52:44,862 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:55:11,060 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 02:55:11,173 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by com.mongodb.async.client.ClientSessionHelper$1@3fc9dfc5 from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+[INFO] date=2021-05-27 02:55:11,188 application= host= thread=[cluster-ClusterId{value='60aebcb749285ba1a07af992', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:39}] to localhost:27017
+[INFO] date=2021-05-27 02:55:11,194 application= host= thread=[cluster-ClusterId{value='60aebcb749285ba1a07af992', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2817922}
+[INFO] date=2021-05-27 02:55:11,223 application= host= thread=[Thread-7] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:40}] to localhost:27017
+[INFO] date=2021-05-27 03:00:17,441 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 03:00:17,525 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by com.mongodb.async.client.ClientSessionHelper$1@2c3dec30 from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+[INFO] date=2021-05-27 03:00:17,548 application= host= thread=[cluster-ClusterId{value='60aebde949285ba1b3cace83', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:41}] to localhost:27017
+[INFO] date=2021-05-27 03:00:17,554 application= host= thread=[cluster-ClusterId{value='60aebde949285ba1b3cace83', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 3]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2007948}
+[INFO] date=2021-05-27 03:00:17,566 application= host= thread=[Thread-7] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:42}] to localhost:27017

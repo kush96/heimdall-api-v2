@@ -2,6 +2,7 @@ package com.joveo.dao
 
 //import akka.actor.TypedActor.dispatcher
 
+import com.joveo.dao.`trait`.PermissionDao
 import com.joveo.fna_api_utilities.core.models.{JoveoError, JoveoErrorResponse}
 import com.joveo.model.Permission
 import org.mongodb.scala._
