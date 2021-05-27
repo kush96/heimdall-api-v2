@@ -1,18 +1,17 @@
 package com.joveo.dao.mongo
 
 import com.joveo.commons.SecretManager
-import com.joveo.model.Permission
-
-import java.net.URLEncoder
+import com.joveo.model.{Permission, Role}
 import com.typesafe.config.Config
 import org.bson.codecs.configuration.CodecRegistries
-import org.bson.{BsonReader, BsonWriter}
-import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
 import org.bson.codecs.configuration.CodecRegistries._
+import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
+import org.bson.{BsonReader, BsonWriter}
+import org.joda.time.DateTime
 import org.mongodb.scala._
 import org.mongodb.scala.bson.codecs.{DEFAULT_CODEC_REGISTRY, Macros}
-import org.joda.time.{DateTime, DateTimeZone}
 
+import java.net.URLEncoder
 import scala.util.{Failure, Success}
 
 class   Mongo(config: Config, secretManager: SecretManager) {
@@ -44,6 +43,7 @@ class   Mongo(config: Config, secretManager: SecretManager) {
   def customCodeRegistry() = {
     fromProviders(
       Macros.createCodecProviderIgnoreNone[Permission](),
+      Macros.createCodecProviderIgnoreNone[Role]()
     )
   }
 
@@ -55,6 +55,7 @@ class   Mongo(config: Config, secretManager: SecretManager) {
   val mojoDB: MongoDatabase = mongoClient.getDatabase("mojo").withCodecRegistry(codecRegistry)
 
   val permissionsCollection: MongoCollection[Permission] = mojoDB.getCollection[Permission]("permissions")
+  val rolesCollection: MongoCollection[Role] = mojoDB.getCollection[Role]("roles_test")
 }
 
 class JodaDateTimeCodec extends Codec[DateTime] {

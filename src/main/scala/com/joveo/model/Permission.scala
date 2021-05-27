@@ -1,7 +1,6 @@
 package com.joveo.model
 
 import org.mongodb.scala.bson.annotations.BsonProperty
-import java.util.Date
 
 case class Permission(
                        @BsonProperty("_id") id: String = "",
@@ -12,3 +11,4 @@ case class Permission(
 //                       createdOn: Date = new Date(),
                        createdBy: String = "System"
                      )
+

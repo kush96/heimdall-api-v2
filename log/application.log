@@ -468,3 +468,289 @@ Caused by: java.net.ConnectException: Operation timed out
     "createdBy" : "",
     "isAllowed" : true 
 } responseBody={"errorCode":"401","message":"permission doesn't exists","errorType":""}
+[INFO] date=2021-05-25 16:02:23,942 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 16:02:24,091 application= host= thread=[cluster-ClusterId{value='60acd237e79d3b578ac183d9', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+[INFO] date=2021-05-25 16:02:24,097 application= host= thread=[cluster-ClusterId{value='60acd237e79d3b578ac183d9', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 1]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3115874}
+[ERROR] date=2021-05-25 16:02:24,971 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=73 - 
+> could not start application: 
+[INFO] date=2021-05-25 16:03:51,444 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 16:03:51,563 application= host= thread=[cluster-ClusterId{value='60acd28fe79d3b579bc350e8', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3}] to localhost:27017
+[INFO] date=2021-05-25 16:03:51,582 application= host= thread=[cluster-ClusterId{value='60acd28fe79d3b579bc350e8', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 1]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=14307597}
+[INFO] date=2021-05-25 16:03:52,487 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-25 16:04:02,406 application= host= thread=[Thread-8] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:4}] to localhost:27017
+[ERROR] date=2021-05-25 16:04:02,494 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=10226 path=/api/v1/permission method=GET statusCode=401 requestBody= responseBody={"errorCode":"401","message":"permission doesn't exists","errorType":""}
+[ERROR] date=2021-05-25 16:04:55,316 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=63050 path=/api/v1/permission method=GET statusCode=401 requestBody= responseBody={"errorCode":"401","message":"permission doesn't exists","errorType":""}
+[ERROR] date=2021-05-25 16:04:56,841 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=64574 path=/api/v1/permission method=GET statusCode=401 requestBody= responseBody={"errorCode":"401","message":"permission doesn't exists","errorType":""}
+[INFO] date=2021-05-25 16:08:16,813 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 16:08:17,764 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-25 16:08:53,276 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by com.mongodb.async.client.ClientSessionHelper$1@7e7c75c9 from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+[ERROR] date=2021-05-25 16:09:12,579 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=55054 path=/api/v1/permission method=GET statusCode=503 requestBody= responseBody={"errorCode":"timed_out","message":"The request took too long to process","errorType":"timeout_error"}
+[INFO] date=2021-05-25 16:09:15,952 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-11] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by com.mongodb.async.client.ClientSessionHelper$1@7cdcd876 from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+[INFO] date=2021-05-25 16:09:23,283 application= host= thread=[cluster-60acd398e79d3b57c5fabbba] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+[INFO] date=2021-05-25 16:09:32,109 application= host= thread=[cluster-ClusterId{value='60acd398e79d3b57c5fabbba', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=76 - 
+> Exception in monitor thread while connecting to server services-mongo.infra-dev.joveo.com:27000
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.AsynchronousSocketChannelStream$OpenCompletionHandler.failed(AsynchronousSocketChannelStream.java:272)
+	at java.base/sun.nio.ch.Invoker.invokeUnchecked(Invoker.java:129)
+	at java.base/sun.nio.ch.Invoker$2.run(Invoker.java:219)
+	at java.base/sun.nio.ch.AsynchronousChannelGroupImpl$1.run(AsynchronousChannelGroupImpl.java:112)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.net.ConnectException: Operation timed out
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.finishConnect(UnixAsynchronousSocketChannelImpl.java:252)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.finish(UnixAsynchronousSocketChannelImpl.java:198)
+	at java.base/sun.nio.ch.UnixAsynchronousSocketChannelImpl.onEvent(UnixAsynchronousSocketChannelImpl.java:213)
+	at java.base/sun.nio.ch.KQueuePort$EventHandlerTask.run(KQueuePort.java:312)
+	... 1 common frames omitted
+[ERROR] date=2021-05-25 16:09:35,914 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-11] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=78392 path=/api/v1/permission method=GET statusCode=503 requestBody= responseBody={"errorCode":"timed_out","message":"The request took too long to process","errorType":"timeout_error"}
+[INFO] date=2021-05-25 16:09:45,956 application= host= thread=[cluster-60acd398e79d3b57c5fabbba] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Operation timed out}}]}. Waiting for 30000 ms before timing out
+[ERROR] date=2021-05-25 16:09:53,333 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-8] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=95811 path=/api/v1/permission method=GET statusCode=500 requestBody= responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[ERROR] date=2021-05-25 16:10:15,964 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-8] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=118442 path=/api/v1/permission method=GET statusCode=500 requestBody= responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-25 16:10:42,881 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-8] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> No server chosen by com.mongodb.async.client.ClientSessionHelper$1@6f805258 from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=UNKNOWN, state=CONNECTING, exception={com.mongodb.MongoSocketOpenException: Exception opening socket}, caused by {java.net.ConnectException: Operation timed out}}]}. Waiting for 30000 ms before timing out
+[INFO] date=2021-05-25 16:10:53,953 application= host= thread=[cluster-ClusterId{value='60acd398e79d3b57c5fabbba', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:3, serverValue:3403531}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:10:55,146 application= host= thread=[cluster-ClusterId{value='60acd398e79d3b57c5fabbba', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1189612123, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Tue May 25 16:10:53 IST 2021, lastUpdateTimeNanos=176462909270032}
+[ERROR] date=2021-05-25 16:11:02,864 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-8] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=165342 path=/api/v1/permission method=GET statusCode=503 requestBody= responseBody={"errorCode":"timed_out","message":"The request took too long to process","errorType":"timeout_error"}
+[INFO] date=2021-05-25 16:11:06,255 application= host= thread=[Thread-1] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:4, serverValue:3403533}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:11:07,005 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-10] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=169483 path=/api/v1/permission method=GET statusCode=200
+[INFO] date=2021-05-25 16:11:36,284 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 16:11:37,303 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-25 16:11:39,446 application= host= thread=[cluster-ClusterId{value='60acd46020ef3958cd985b0f', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3403590}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:11:40,966 application= host= thread=[cluster-ClusterId{value='60acd46020ef3958cd985b0f', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1518248537, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Tue May 25 16:11:43 IST 2021, lastUpdateTimeNanos=176508729175118}
+[INFO] date=2021-05-25 16:12:01,490 application= host= thread=[Thread-13] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:3403615}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:12:02,575 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=25506 path=/api/v1/permission method=GET statusCode=200
+[INFO] date=2021-05-25 16:13:45,826 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-25 16:13:46,794 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-25 16:13:49,977 application= host= thread=[cluster-ClusterId{value='60acd4e120ef3958de4c3cf7', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3403738}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:13:50,706 application= host= thread=[cluster-ClusterId{value='60acd4e120ef3958de4c3cf7', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=727359735, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Tue May 25 16:13:53 IST 2021, lastUpdateTimeNanos=176638477862853}
+[INFO] date=2021-05-25 16:14:10,579 application= host= thread=[Thread-13] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:3403745}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-25 16:14:11,343 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=24820 path=/api/v1/permission method=GET statusCode=200
+[INFO] date=2021-05-25 16:14:19,752 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=33231 path=/api/v1/permission method=GET statusCode=200
+[INFO] date=2021-05-27 12:34:32,746 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 12:34:33,942 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 12:34:37,145 application= host= thread=[cluster-ClusterId{value='60af44809b1719771df79efa', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3495389}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:34:38,046 application= host= thread=[cluster-ClusterId{value='60af44809b1719771df79efa', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=896978906, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Thu May 27 12:34:46 IST 2021, lastUpdateTimeNanos=251393833617953}
+[ERROR] date=2021-05-27 12:34:45,568 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-5] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=11903 path=/api/v1/role method=GET statusCode=500 requestBody= responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-27 12:44:39,140 application= host= thread=[cluster-ClusterId{value='60af44809b1719771df79efa', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:3495920}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:44:52,830 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[ERROR] date=2021-05-27 12:44:52,837 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=619173 path=/api/v1/role method=POST statusCode=500 requestBody={
+  "displayName": "Editor",
+  "description": "Allow all permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojo",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-27 12:45:04,976 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[ERROR] date=2021-05-27 12:45:04,979 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-4] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=631316 path=/api/v1/role method=POST statusCode=500 requestBody={
+  "displayName": "Editor",
+  "description": "Allow all permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojo",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-27 12:49:31,860 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 12:49:33,097 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 12:49:36,728 application= host= thread=[cluster-ClusterId{value='60af48039b17197760af718a', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3496084}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:49:37,744 application= host= thread=[cluster-ClusterId{value='60af48039b17197760af718a', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1013739788, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Thu May 27 12:49:43 IST 2021, lastUpdateTimeNanos=252293527758584}
+[INFO] date=2021-05-27 12:49:50,951 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[ERROR] date=2021-05-27 12:49:51,084 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=18308 path=/api/v1/role method=POST statusCode=500 requestBody={
+  "displayName": "Editor",
+  "description": "Allow all permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojo",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-27 12:52:44,453 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 12:52:45,804 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 12:52:50,238 application= host= thread=[cluster-ClusterId{value='60af48c49b17197774bba75a', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3496298}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:52:51,083 application= host= thread=[cluster-ClusterId{value='60af48c49b17197774bba75a', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=841960278, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Thu May 27 12:52:58 IST 2021, lastUpdateTimeNanos=252486860597839}
+[INFO] date=2021-05-27 12:53:01,674 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[ERROR] date=2021-05-27 12:53:01,751 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=16277 path=/api/v1/role method=POST statusCode=500 requestBody={
+  "displayName": "Editor",
+  "description": "Allow all permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojo",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"internal_server_error","message":"Internal server error","errorType":"api_error"}
+[INFO] date=2021-05-27 12:58:20,092 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 12:58:21,228 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 12:58:24,231 application= host= thread=[cluster-ClusterId{value='60af4a149b171977993e5511', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3496510}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:58:26,006 application= host= thread=[cluster-ClusterId{value='60af4a149b171977993e5511', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1772012236, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Thu May 27 12:58:28 IST 2021, lastUpdateTimeNanos=252821786158736}
+[INFO] date=2021-05-27 12:58:40,926 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 12:58:51,693 application= host= thread=[Thread-13] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:3496517}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 12:58:55,866 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=34930 path=/api/v1/role method=POST statusCode=200
+[INFO] date=2021-05-27 13:01:04,421 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-10] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:01:06,181 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-10] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=165247 path=/api/v1/role method=POST statusCode=200
+[INFO] date=2021-05-27 13:03:06,181 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:03:07,235 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-15] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=286301 path=/api/v1/role method=POST statusCode=200
+[INFO] date=2021-05-27 13:04:27,321 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-11] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:04:28,339 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-19] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=367405 path=/api/v1/role method=POST statusCode=200
+[INFO] date=2021-05-27 13:04:57,870 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-11] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[ERROR] date=2021-05-27 13:04:59,712 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-11] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=398774 path=/api/v1/role method=POST statusCode=400 requestBody={
+  "displayName": "Editor",
+  "description": "Allow edit permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojoPro",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"401","message":"Permission Already Exists","errorType":"Resource Already Exists"}
+[INFO] date=2021-05-27 13:12:47,780 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[services-mongo.infra-dev.joveo.com:27000], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 13:12:48,993 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 13:12:52,351 application= host= thread=[cluster-ClusterId{value='60af4d779b171977de3d1628', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:3497215}] to services-mongo.infra-dev.joveo.com:27000
+[INFO] date=2021-05-27 13:12:53,284 application= host= thread=[cluster-ClusterId{value='60af4d779b171977de3d1628', description='null'}-services-mongo.infra-dev.joveo.com:27000] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=services-mongo.infra-dev.joveo.com:27000, type=REPLICA_SET_PRIMARY, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 0, 18]}, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=930668404, setName='staging-mongo', canonicalAddress=172.16.10.25:27000, hosts=[172.16.10.25:27000], passives=[], arbiters=[], primary='172.16.10.25:27000', tagSet=TagSet{[]}, electionId=7fffffff0000000000000005, setVersion=1, lastWriteDate=Thu May 27 13:12:58 IST 2021, lastUpdateTimeNanos=253689041992645}
+[INFO] date=2021-05-27 13:13:10,238 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:13:16,563 application= host= thread=[Thread-13] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:3497221}] to services-mongo.infra-dev.joveo.com:27000
+[ERROR] date=2021-05-27 13:13:18,262 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=29570 path=/api/v1/role method=POST statusCode=400 requestBody={
+  "displayName": "Editor",
+  "description": "Allow edit permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojoPro",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"401","message":"Role Already Exists","errorType":"Resource Already Exists"}
+[INFO] date=2021-05-27 13:14:06,793 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:14:14,143 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=85453 path=/api/v1/role method=POST statusCode=200
+[INFO] date=2021-05-27 13:15:33,789 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-16] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=165099 path=/api/v1/role method=GET statusCode=200
+[INFO] date=2021-05-27 13:44:48,439 application= host= thread=[main] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[INFO] date=2021-05-27 13:44:48,562 application= host= thread=[cluster-ClusterId{value='60af54f89b17197860a3985f', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:1, serverValue:18}] to localhost:27017
+[INFO] date=2021-05-27 13:44:48,569 application= host= thread=[cluster-ClusterId{value='60af54f89b17197860a3985f', description='null'}-localhost:27017] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 4, 1]}, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3035925}
+[INFO] date=2021-05-27 13:44:49,897 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoServer file=JoveoServer.scala method=$anonfun$startApp$1 line=71 - 
+> application is up and running at localhost:8080
+[INFO] date=2021-05-27 13:44:57,031 application= host= thread=[Thread-8] class=com.mongodb.diagnostics.logging.SLF4JLogger file=SLF4JLogger.java method=info line=71 - 
+> Opened connection [connectionId{localValue:2, serverValue:19}] to localhost:27017
+[ERROR] date=2021-05-27 13:44:57,132 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-6] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=97 - 
+> elapsedTime=7635 path=/api/v1/role method=GET statusCode=401 requestBody={
+  "displayName": "Editor",
+  "description": "Allow edit permissions",
+  "createdBy": "preeti@joveo.com",
+  "accountId": "ripple",
+  "application": "mojoPro",
+  "isDefaultRole": false,
+  "permissions": [
+    "permission_a",
+    "permission_b"
+  ]
+} responseBody={"errorCode":"401","message":"role doesn't exists","errorType":""}
+[INFO] date=2021-05-27 13:45:04,206 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=kamon.util.logger.LazyLogger file=LazyLogger.scala method=info line=35 - 
+> Inserted into DB
+[INFO] date=2021-05-27 13:45:04,322 application= host= thread=[DemoApp-system-akka.actor.default-dispatcher-7] class=com.joveo.fna_api_utilities.core.JoveoLogging file=JoveoLogging.scala method=logRequest line=99 - 
+> elapsedTime=14827 path=/api/v1/role method=POST statusCode=200

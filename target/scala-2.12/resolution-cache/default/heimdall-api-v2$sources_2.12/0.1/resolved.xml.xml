@@ -4,7 +4,7 @@
 		module="heimdall-api-v2$sources_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20210524103845"
+		publication="20210525155503"
 	/>
 	<configurations>
 		<conf name="default" visibility="public" description=""/>

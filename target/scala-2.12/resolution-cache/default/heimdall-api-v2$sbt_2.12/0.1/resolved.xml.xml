@@ -4,7 +4,7 @@
 		module="heimdall-api-v2$sbt_2.12"
 		revision="0.1"
 		status="integration"
-		publication="20210524103844"
+		publication="20210525155406"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
