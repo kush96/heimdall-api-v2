@@ -15,6 +15,6 @@ import akka.stream.{ActorMaterializer, Materializer}
 
 import scala.concurrent.ExecutionContext
 
-class Endpoints(permissionsEndpoint: PermissionApi) {
-  val tapirRoutes = permissionsEndpoint.route
+class Endpoints(permissionsEndpoint: PermissionApi,userEndpoints : UserApi) {
+  val tapirRoutes = permissionsEndpoint.route ::: userEndpoints.route
 }
