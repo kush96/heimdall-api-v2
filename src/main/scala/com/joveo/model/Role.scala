@@ -25,7 +25,6 @@ import java.util.Date
 case class Role(
                        @BsonProperty("_id") id: String = "",
                        displayName: String,
-                       roleKey: String,
                        description: String,
                        createdBy: String,
                        accountId: String,
@@ -33,6 +32,5 @@ case class Role(
                        isDefaultRole: Boolean,
                        permissions: List[String],
                        createdOn: Date = new Date(),
-                       isActive: Boolean = true,
-
+                       isDeleted: Boolean = false
                      )

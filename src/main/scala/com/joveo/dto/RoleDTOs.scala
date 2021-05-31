@@ -10,6 +10,10 @@ object RoleDTOs {
                      isDefaultRole: Boolean,
                      permissions: List[String])
 
+  case class RoleUpdateRequestDto(
+
+                                 )
+
 
   object RequestDTOs {
 

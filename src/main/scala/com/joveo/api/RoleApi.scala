@@ -32,7 +32,7 @@ class RoleApi(roleService: RoleService)(implicit formats: Formats,
     .in(jsonBody[RoleDto])
     .out(jsonBody[String])
     .serverLogic { case (authUser, roleDto) => {
-      logger.info("Inserted into DB")
+      logger.info("Role inserted into DB")
       roleService.addRole(roleDto) map {
         case Right(roleKey) => Right(roleKey)
         case Left(joveoError) => Left(joveoError)
@@ -51,6 +51,20 @@ class RoleApi(roleService: RoleService)(implicit formats: Formats,
       }
     }
     }
+
+//  val deleteRole = roleEndpoint.delete
+//    .in(query[String]("displayName"))
+//    .in(query[String]("application"))
+//    .in(query[String]("accountId"))
+//    .out(jsonBody[String])
+//    .serverLogic { case (authUser, (displayName, application, accountId)) => {
+//      logger.info("Inserted into DB")
+//      roleService.updateRole(roleDto) map {
+//        case Right(roleUpdated) => Right(RoleConstants.UPDATE_ROLE_RESPONSE)
+//        case Left(joveoError) => Left(joveoError)
+//      }
+//    }
+//    }
 
   val updateRole = roleEndpoint.put
     .in(jsonBody[RoleDto])
