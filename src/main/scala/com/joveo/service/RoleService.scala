@@ -1,8 +1,8 @@
 package com.joveo.service
 
 import com.joveo.constants.RoleConstants.{ErrorMessages, ErrorTypes}
-import com.joveo.dao.RoleDao
-import com.joveo.dto.RoleDTOs.{RoleDto}
+import com.joveo.dao.`trait`.RoleDao
+import com.joveo.dto.RoleDTOs.RoleDto
 import com.joveo.fna_api_utilities.core.models.{JoveoError, JoveoErrorResponse, UnauthorizedErrorResponse}
 import com.joveo.model.Role
 

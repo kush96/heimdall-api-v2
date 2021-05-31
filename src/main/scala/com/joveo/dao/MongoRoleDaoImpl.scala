@@ -2,6 +2,7 @@ package com.joveo.dao
 
 //import akka.actor.TypedActor.dispatcher
 
+import com.joveo.dao.`trait`.RoleDao
 import com.joveo.model.Role
 import org.mongodb.scala._
 import org.mongodb.scala.model.Filters
