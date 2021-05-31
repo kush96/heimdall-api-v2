@@ -1,8 +1,8 @@
 package com.joveo.service
 
 import com.joveo.constants.PermissionContants.{ErrorMessages, ErrorTypes}
-import com.joveo.dao.PermissionDao
-import com.joveo.dto.PermissionDTOs.{PermissionDto}
+import com.joveo.dao.`trait`.PermissionDao
+import com.joveo.dto.PermissionDTOs.PermissionDto
 import com.joveo.fna_api_utilities.core.models.{JoveoError, JoveoErrorResponse, UnauthorizedErrorResponse}
 import com.joveo.model.Permission
 
@@ -11,12 +11,18 @@ import scala.concurrent.{ExecutionContext, Future}
 
 class PermissionService(permissionDao: PermissionDao)(implicit ec: ExecutionContext) {
 
-  def getPermissionByName(permissionName: String): Future[Either[JoveoError,Permission]] = {
+  /**
+   *
+   * @param permissionName
+   * @return
+   */
+  def getPermission(permissionName: String): Future[Either[JoveoError,Permission]] = {
     permissionDao.getPermissionByName(permissionName).map {
       case Some(permission) => Right(permission)
-      case None => Left(UnauthorizedErrorResponse("401", "permission doesn't exists", ""))
+      case None => Left(UnauthorizedErrorResponse("404", "permission doesn't exists", ""))
     }
   }
+
   def addPermission(permissionDto: PermissionDto): Future[Either[JoveoError,String]] = {
     permissionDao.getPermissionByName(permissionDto.permissionName).flatMap {
       case Some(_) => Future(Left(JoveoErrorResponse("401",ErrorMessages.PERMISSION_ALREADY_EXISTS,ErrorTypes.RESOURCE_ALREADY_EXISTS )))
@@ -29,7 +35,7 @@ class PermissionService(permissionDao: PermissionDao)(implicit ec: ExecutionCont
 //      case Left(ex) => throw ex
 //  }
 //
-  def updatePermission(permissionDto: PermissionDto): Future[Either[JoveoError,Boolean]] = getPermissionByName(permissionDto.permissionName).flatMap {
+  def updatePermission(permissionDto: PermissionDto): Future[Either[JoveoError,Boolean]] = getPermission(permissionDto.permissionName).flatMap {
     case Right(permission: Permission) => permissionDao.updatePermission(permission.copy(description = permissionDto.description, isAllowed = permissionDto.isAllowed)).map(isUpdated=>Right(isUpdated))
     case Left(error) => Future(Left(error))
   }

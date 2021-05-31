@@ -2,7 +2,7 @@ package com.joveo.service.unittest
 
 
 import com.joveo.Application.system.dispatcher
-import com.joveo.dao.PermissionDao
+import com.joveo.dao.`trait`.PermissionDao
 import com.joveo.model.Permission
 import com.joveo.service.PermissionService
 import org.mockito.Matchers.any
@@ -25,7 +25,7 @@ class PermissionServiceSpec extends AnyFlatSpec {
     val dummyPermission = Permission(id = dummyId,dummyPermissionName,dummyDescription,dummyIsAllowed)
     when(permissionDaoMock.getPermissionByName(any[String])).thenReturn(Future(Some(dummyPermission)))
 
-    permissionService.getPermissionByName(dummyPermissionName) map {
+    permissionService.getPermission(dummyPermissionName) map {
       case Right(permission) => permission should equal(dummyPermission)
     }
   }
