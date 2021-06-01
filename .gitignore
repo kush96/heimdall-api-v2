@@ -1,4 +1,4 @@
 target/
 log/application.log
 project/target/
-project/target/config-classes/
+.idea/

@@ -64,7 +64,8 @@ case class MojoGoScopeMetadata(
                                 teamId: Option[String],
                                 teamAccess: Option[List[String]],
                                 hierarchicalAccessScope: Option[Map[String, List[String]]],
-                                assignJobsBy: Option[String] = None
+                                assignJobsBy: Option[String] = None,
+                                ssoEnabled: Boolean = false
                               )
 
 
