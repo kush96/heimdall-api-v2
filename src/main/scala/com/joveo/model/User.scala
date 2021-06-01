@@ -22,7 +22,7 @@ case class User(
 case class Scope(
                   productId: String,
                   accountId: String,
-                  roleKey: String,
+                  roleId: String,
                   createdBy: String,
                   createdAt: Date,
                   metadata: Any,
