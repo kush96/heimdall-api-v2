@@ -1,8 +1,7 @@
-package com.joveo.dao.mongo
+package com.joveo.commons.mongo
 
 import com.joveo.commons.SecretManager
-import com.joveo.dto.UserDTOs.BifrostUserDto
-import com.joveo.model.{Permission, Scope, User}
+import com.joveo.model.{MojoGoScopeMetadata, MojoProScopeMetadata, Permission, Scope, User}
 
 import java.net.URLEncoder
 import com.typesafe.config.Config
@@ -12,7 +11,7 @@ import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
 import org.bson.codecs.configuration.CodecRegistries._
 import org.mongodb.scala._
 import org.mongodb.scala.bson.codecs.{DEFAULT_CODEC_REGISTRY, Macros}
-import org.joda.time.{DateTime, DateTimeZone}
+import org.joda.time.{DateTime}
 
 import scala.util.{Failure, Success}
 
@@ -46,7 +45,10 @@ class   Mongo(config: Config, secretManager: SecretManager) {
     fromProviders(
       Macros.createCodecProviderIgnoreNone[Permission](),
       Macros.createCodecProviderIgnoreNone[User](),
-      Macros.createCodecProviderIgnoreNone[Scope]()
+      Macros.createCodecProviderIgnoreNone[Scope](),
+      Macros.createCodecProviderIgnoreNone[MojoGoScopeMetadata](),
+      Macros.createCodecProviderIgnoreNone[MojoProScopeMetadata]()
+
     )
   }
 
