@@ -35,14 +35,15 @@ case class MojoGoAppMetadata()
 
 case class CDAppMetadata()
 
-//look in authenticate return if anything needs adding here
+// look in authenticate to find out if an
 object UserUtils {
   implicit val formats = DefaultFormats
   def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
 
   val productMetadataClassMap: Map[String, Manifest[_]] = Map(
     ProductNames.MOJO_GO_PRODUCT_NAME -> implicitly[Manifest[MojoGoScopeMetadata]],
-    ProductNames.MOJO_PRO_PRODUCT_NAME -> implicitly[Manifest[MojoProScopeMetadata]]
+    ProductNames.MOJO_PRO_PRODUCT_NAME -> implicitly[Manifest[MojoProScopeMetadata]],
+    ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> implicitly[Manifest[CDScopeMetadata]]
   )
 
   def serialize(scopeDto: ScopeDto) = {
