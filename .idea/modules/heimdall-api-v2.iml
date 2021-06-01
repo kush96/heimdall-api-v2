@@ -29,7 +29,7 @@
     <orderEntry type="library" name="sbt: com.amazonaws:jmespath-java:1.11.616:jar" level="project" />
     <orderEntry type="library" name="sbt: com.beachape:enumeratum-macros_2.12:1.5.9:jar" level="project" />
     <orderEntry type="library" name="sbt: com.beachape:enumeratum_2.12:1.5.13:jar" level="project" />
-    <orderEntry type="library" name="sbt: com.chuusai:shapeless_2.12:2.3.3:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.chuusai:shapeless_2.12:2.3.6:jar" level="project" />
     <orderEntry type="library" name="sbt: com.datadoghq:java-dogstatsd-client:2.11.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-annotations:2.11.3:jar" level="project" />
     <orderEntry type="library" name="sbt: com.fasterxml.jackson.core:jackson-core:2.11.3:jar" level="project" />
@@ -93,11 +93,11 @@
     <orderEntry type="library" name="sbt: commons-logging:commons-logging:1.1.3:jar" level="project" />
     <orderEntry type="library" name="sbt: de.heikoseeberger:akka-http-json4s_2.12:1.21.0:jar" level="project" />
     <orderEntry type="library" name="sbt: de.siegmar:fastcsv:1.0.3:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-core_2.12:0.13.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-generic_2.12:0.13.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-jawn_2.12:0.13.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-numbers_2.12:0.13.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: io.circe:circe-parser_2.12:0.13.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.circe:circe-core_2.12:0.14.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.circe:circe-generic_2.12:0.14.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.circe:circe-jawn_2.12:0.14.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.circe:circe-numbers_2.12:0.14.0:jar" level="project" />
+    <orderEntry type="library" name="sbt: io.circe:circe-parser_2.12:0.14.0:jar" level="project" />
     <orderEntry type="library" name="sbt: io.circe:circe-yaml_2.12:0.13.1:jar" level="project" />
     <orderEntry type="library" name="sbt: io.kamon:kamon-akka-2.4_2.12:0.6.6:jar" level="project" />
     <orderEntry type="library" name="sbt: io.kamon:kamon-akka-http_2.12:0.6.6:jar" level="project" />
@@ -173,11 +173,10 @@
     <orderEntry type="library" name="sbt: org.scalatest:scalatest-wordspec_2.12:3.2.7:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scalatest:scalatest_2.12:3.2.7:jar" level="project" />
     <orderEntry type="library" name="sbt: org.slf4j:slf4j-api:1.7.25:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:cats-core_2.12:2.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:cats-kernel_2.12:2.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:cats-macros_2.12:2.1.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:jawn-parser_2.12:1.0.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.typelevel:macro-compat_2.12:1.1.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.typelevel:cats-core_2.12:2.6.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.typelevel:cats-kernel_2.12:2.6.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.typelevel:jawn-parser_2.12:1.1.2:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.typelevel:simulacrum-scalafix-annotations_2.12:0.5.4:jar" level="project" />
     <orderEntry type="library" name="sbt: org.webjars:swagger-ui:3.48.0:jar" level="project" />
     <orderEntry type="library" name="sbt: org.yaml:snakeyaml:1.26:jar" level="project" />
     <orderEntry type="library" name="sbt: software.amazon.ion:ion-java:1.0.2:jar" level="project" />
