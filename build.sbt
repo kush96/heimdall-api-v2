@@ -58,5 +58,5 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % "2.11.3",
   "io.spray" %% "spray-json" % "1.3.2",
   "com.joveo" %% "apiutils" % "1.0.1-SNAPSHOT",
+  "software.amazon.awssdk" % "cognitoidentityprovider" % "2.16.40"
 )
-

@@ -25,6 +25,7 @@ import java.util.Date
 case class Role(
                        @BsonProperty("_id") id: String = "",
                        displayName: String,
+                       roleKey: String,
                        description: String,
                        createdBy: String,
                        accountId: String,

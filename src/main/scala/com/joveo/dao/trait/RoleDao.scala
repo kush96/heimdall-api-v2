@@ -4,8 +4,6 @@ import com.joveo.model.Role
 
 import scala.concurrent.Future
 
-trait
-
 trait RoleDao {
   def addRole(role: Role): Future[String]
 

@@ -1,10 +1,5 @@
 package com.joveo.dto
 
-import com.joveo.model.Scope
-
-import java.util.Date
-
-
 object UserDTOs {
 
   case class BifrostUserDto(
@@ -22,6 +17,24 @@ object UserDTOs {
                     metadata: String,
                     createdBy : String
                   )
+
+  case class LoginDto(
+                     email: Option[String],
+                     password: Option[String],
+                     application: Option[String],
+                     accountId: Option[String],
+                     refreshToken: Option[String],
+                     code: Option[String],
+                     redirectUrl : Option[String]
+                     )
+
+  case class AuthResponse(
+                         accessToken: String,
+                         idToken: String,
+                         refreshToken: Option[String],
+                         tokenType: String,
+                         expiresIn: Int
+                       )
 
 }
 object main extends App{

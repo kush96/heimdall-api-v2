@@ -2,6 +2,7 @@ package modules
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import com.joveo.api.{Endpoints, PermissionApi, UserApi}
+import com.joveo.clients.CognitoClient
 import com.joveo.commons.{AWSSecretManager, Environment, SecretManager}
 import com.joveo.dao.{MongoPermissionDaoImpl, MongoUserDaoImpl}
 import com.joveo.dao.mongo.Mongo
@@ -42,6 +43,7 @@ trait DaoModule extends AkkaModules with MongoModule {
 trait ServicesModule extends AkkaModules with DaoModule {
   lazy val permissionService = wire[PermissionService]
   lazy val userService = wire[UserService]
+  lazy val cognitoClient = wire[CognitoClient]
 }
 
 trait ApiModule extends ServicesModule with AkkaModules {
@@ -49,6 +51,5 @@ trait ApiModule extends ServicesModule with AkkaModules {
   lazy val userApi = wire[UserApi]
   lazy val endpoints = wire[Endpoints]
 }
-
 
 class AllModules extends ApiModule
