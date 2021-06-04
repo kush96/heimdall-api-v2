@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
 
   "ch.qos.logback" % "logback-classic" % "1.2.3",
 
-  "org.mongodb.scala" %% "mongo-scala-driver" % "2.4.0",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "2.7.0",
   "joda-time" % "joda-time" % "2.10",
   "org.joda" % "joda-money" % "1.0.1",
 

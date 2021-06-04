@@ -2,12 +2,18 @@ package com.joveo.model
 
 import com.joveo.constants.GenericConstants.ProductNames
 import com.joveo.dto.UserDTOs.ScopeDto
+import org.json4s.JsonAST.{JField, JString}
+//import org.json4s.JsonDSL.jobject2assoc
+import org.json4s.JsonDSL._
+import org.json4s.native.{Json, JsonMethods, Serialization}
 import org.mongodb.scala.bson.annotations.BsonProperty
 import org.json4s.native.JsonMethods.parse
-import org.json4s.DefaultFormats
-import org.json4s.JValue
+import org.json4s.native.Serialization.write
+import org.json4s.{DefaultFormats, Formats, JObject, JString, JValue, JsonAST, ShortTypeHints}
+import spray.json.{JsObject, pimpAny}
 
 import java.util.Date
+import scala.::
 
 
 case class User(
@@ -25,7 +31,7 @@ case class Scope(
                   roleId: String,
                   createdBy: String,
                   createdAt: Date,
-                  metadata: Any,
+                  metadata: ScopeMetadata,
                   status: String
                 )
 
@@ -37,26 +43,39 @@ case class CDAppMetadata()
 
 // look in authenticate to find out if an
 object UserUtils {
-  implicit val formats = DefaultFormats
-  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
+  implicit val formats = Serialization.formats(ShortTypeHints(List(classOf[CDScopeMetadata], classOf[MojoGoScopeMetadata],classOf[MojoProScopeMetadata], classOf[VPScopeMetadata])))
 
-  val productMetadataClassMap: Map[String, Manifest[_]] = Map(
-    ProductNames.MOJO_GO_PRODUCT_NAME -> implicitly[Manifest[MojoGoScopeMetadata]],
-    ProductNames.MOJO_PRO_PRODUCT_NAME -> implicitly[Manifest[MojoProScopeMetadata]],
-    ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> implicitly[Manifest[CDScopeMetadata]]
-  )
+  //  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
+  //
+    val productMetadataClassMap: Map[String, String] = Map(
+      ProductNames.MOJO_GO_PRODUCT_NAME -> getClassNameForSer(MojoGoScopeMetadata.getClass),
+      ProductNames.MOJO_PRO_PRODUCT_NAME -> getClassNameForSer(MojoProScopeMetadata.getClass),
+      ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> getClassNameForSer(CDScopeMetadata.getClass)
+    )
+    private def getClassNameForSer(clazz : Class[_<:Any]): String={
+      val className = clazz.getName.split('.').last
+      className.substring(0,className.length-1)
+    }
+    def serialize2(scopeDto: ScopeDto): ScopeMetadata = {
+      val scopeMetadataJson = scopeDto.metadata.asInstanceOf[JObject] ~ ("jsonClass"->productMetadataClassMap(scopeDto.productId.toLowerCase()))
+      val scopeMetadataStr = JsonMethods.compact(JsonMethods.render(scopeMetadataJson))
+      Serialization.read[ScopeMetadata](scopeMetadataStr)
+    }
 
-  def serialize(scopeDto: ScopeDto) = {
-    extract(parse(scopeDto.metadata))(productMetadataClassMap(scopeDto.productId.toLowerCase()))
-  }
+//  def serialize(scopeDto: ScopeDto) = {
+////        extract[ScopeMetadata](parse(scopeDto.metadata))(productMetadataClassMap(scopeDto.productId.toLowerCase()))
+//    MojoProScopeMetadata(List())
+//  }
 }
 
-case class MojoProScopeMetadata(clientIds: List[Int])
+sealed class ScopeMetadata
+
+case class MojoProScopeMetadata(clientIds: List[String]) extends ScopeMetadata
 
 case class CDScopeMetadata(allowedMetrics: List[String],
                            savedSearches: List[SavedSearch] = List.empty,
                            barCharts: List[BarChartConfig],
-                           canWrite: Boolean = true)
+                           canWrite: Boolean = true) extends ScopeMetadata
 
 case class MojoGoScopeMetadata(
                                 clientId: String,
@@ -66,8 +85,13 @@ case class MojoGoScopeMetadata(
                                 hierarchicalAccessScope: Option[Map[String, List[String]]],
                                 assignJobsBy: Option[String] = None,
                                 ssoEnabled: Boolean = false
-                              )
+                              ) extends ScopeMetadata
 
+case class VPScopeMetadata(agencies: List[String],
+                           publisherFamily: String,
+                           liveJobs: Long,
+                           totalJobs: Long
+                          ) extends ScopeMetadata
 
 /*CD metadata classes*/
 case class SavedSearch(name: String, filters: SearchFilters)
@@ -125,3 +149,31 @@ case class DashBoardItem(
                           display: String,
                           client: Option[DashBoardItem] = None
                         )
+object main extends App{
+  import org.json4s.native.JsonMethods.parse
+  import org.json4s.DefaultFormats
+  import org.json4s.JValue
+  import org.json4s.DoubleJsonFormats.GenericFormat
+  implicit val formats: Formats = Serialization.formats(ShortTypeHints(List(classOf[Entity1], classOf[Entity2])))
+  import org.json4s.JsonDSL._
+  sealed class Entity
+  case class Entity1(name : String, value : Int) extends Entity
+  case class Entity2(name : String, value : Long) extends Entity
+  val x = parse(""" { "name" : "abu", "value" : 1 }  """)
+  val y = x.asInstanceOf[JObject] ~ ("jsonClass"->"main$Entity1")
+//  print(y)
+  val ser = write(Entity1("kush",4))
+  val jsonStr = JsonMethods.compact(JsonMethods.render(y))
+  val z = Serialization.read[Entity](jsonStr)
+  println(z)
+  //  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
+//
+//  val mapping: Map[String, Manifest[_]] = Map(
+//    "entity1" -> implicitly[Manifest[Entity1]],
+//    "entity2" -> implicitly[Manifest[Entity2]]
+//  )
+//
+//  val input = parse(""" { "name" : "abu", "value" : 1 } """)
+//  val x = extract(input)(mapping("entity1")).asInstanceOf[]//Entity1("abu", 1)
+//  extract(input)(mapping("entity2")) //Entity2("abu", 1L)
+}

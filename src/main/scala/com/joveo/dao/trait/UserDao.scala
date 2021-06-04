@@ -8,6 +8,8 @@ trait UserDao {
 
   def addUser(user: User): Future[String]
 
+  def addUsers(users: List[User]): Future[List[String]]
+
   def getUser(email: String): Future[Option[User]]
 
   def updateUser(user : User): Future[String]

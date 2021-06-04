@@ -11,6 +11,7 @@ import scala.concurrent.{ExecutionContext, Future}
 
 case class MongoUserDaoImpl(collection: MongoCollection[User])(implicit ec: ExecutionContext) extends UserDao {
 
+  private val EMAIL_FIELD = "email"
   override def addUser(user: User): Future[String] = {
     for {
       _ <- collection.insertOne(user).toFuture()
@@ -18,11 +19,11 @@ case class MongoUserDaoImpl(collection: MongoCollection[User])(implicit ec: Exec
   }
 
   override def getUser(email: String): Future[Option[User]] = {
-    collection.find(equal("emailId", email)).headOption()
+    collection.find(equal(EMAIL_FIELD, email)).headOption()
   }
 
   override def updateUser(user: User): Future[String] = {
-    collection.updateOne(Filters.equal("email", user.email),
+    collection.updateOne(Filters.equal(EMAIL_FIELD, user.email),
       combine(
         set("scopes", user.scopes)
       )
@@ -31,4 +32,9 @@ case class MongoUserDaoImpl(collection: MongoCollection[User])(implicit ec: Exec
     })
   }
 
+  override def addUsers(users: List[User]): Future[List[String]] = {
+    for {
+      _ <- collection.insertMany(users).toFuture()
+    } yield users.map(_.id)
+  }
 }
