@@ -1,19 +1,17 @@
 package com.joveo.dao.mongo
 
 import com.joveo.commons.SecretManager
-import com.joveo.dto.UserDTOs.BifrostUserDto
-import com.joveo.model.{Permission, Scope, User}
-
-import java.net.URLEncoder
+import com.joveo.model.{Permission, Role, RoleCount, Scope, User}
 import com.typesafe.config.Config
 import org.bson.codecs.configuration.CodecRegistries
-import org.bson.{BsonReader, BsonWriter}
-import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
 import org.bson.codecs.configuration.CodecRegistries._
+import org.bson.codecs.{Codec, DecoderContext, EncoderContext}
+import org.bson.{BsonReader, BsonWriter}
+import org.joda.time.DateTime
 import org.mongodb.scala._
 import org.mongodb.scala.bson.codecs.{DEFAULT_CODEC_REGISTRY, Macros}
-import org.joda.time.{DateTime, DateTimeZone}
 
+import java.net.URLEncoder
 import scala.util.{Failure, Success}
 
 class   Mongo(config: Config, secretManager: SecretManager) {
@@ -46,7 +44,9 @@ class   Mongo(config: Config, secretManager: SecretManager) {
     fromProviders(
       Macros.createCodecProviderIgnoreNone[Permission](),
       Macros.createCodecProviderIgnoreNone[User](),
-      Macros.createCodecProviderIgnoreNone[Scope]()
+      Macros.createCodecProviderIgnoreNone[Scope](),
+      Macros.createCodecProviderIgnoreNone[Role](),
+      Macros.createCodecProviderIgnoreNone[RoleCount]()
     )
   }
 
@@ -58,7 +58,9 @@ class   Mongo(config: Config, secretManager: SecretManager) {
   val mojoDB: MongoDatabase = mongoClient.getDatabase("mojo").withCodecRegistry(codecRegistry)
 
   val permissionsCollection: MongoCollection[Permission] = mojoDB.getCollection[Permission]("permissions")
-  val userCollection: MongoCollection[User] = mojoDB.getCollection[User]("users")
+  val userCollection: MongoCollection[User] = mojoDB.getCollection[User]("users_test")
+  val rolesCollection: MongoCollection[Role] = mojoDB.getCollection[Role]("roles_test")
+  val roleCountCollection: MongoCollection[Role] = mojoDB.getCollection[Role]("role_count")
 }
 
 class JodaDateTimeCodec extends Codec[DateTime] {

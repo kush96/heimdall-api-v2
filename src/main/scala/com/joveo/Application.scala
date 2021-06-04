@@ -10,5 +10,5 @@ object Application extends JoveoServer {
   override def appPort: Int = 8080
   private val modules = new AllModules
 
-  override val tapirRoutes = modules.endpoints.tapirRoutes2
+  override val tapirRoutes = modules.endpoints.tapirRoutes
 }

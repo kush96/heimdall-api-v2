@@ -17,26 +17,41 @@ class MongoRoleDaoImpl(collection: MongoCollection[Role])(implicit ec: Execution
   // TODO : Add logs
   //  Error handling
   //  Validation on json body
-  override def getRoleByName(roleKey: String): Future[Option[Role]] = {
-    collection.find(equal("roleKey", roleKey)).headOption()
+  override def getRoleById(displayName: String): Future[Option[Role]] = {
+    collection.find(equal("displayName", displayName)).headOption()
   }
 
 
   override def addRole(role: Role): Future[String] = {
     for {
       _ <- collection.insertOne(role).toFuture()
-    } yield role.roleKey
+    } yield role.id
   }
 
 
   override def updateRole(role: Role): Future[Boolean] = {
-    collection.updateOne(Filters.equal("roleKey", role.roleKey),
+    collection.updateOne(Filters.equal("_id", role.id),
       combine(
-        set("isActive", true),
+        set("displayName", role.displayName),
         set("description", role.description),
         set("permissions", role.permissions)
       )
     ).toFuture().map(_.wasAcknowledged())
   }
+
+  override def deleteRole(role: Role): Future[Boolean] = {
+    collection.updateOne(Filters.equal("_id", role.id),
+      combine(
+        set("isDeleted", role.isDeleted)
+      )
+    ).toFuture().map(_.wasAcknowledged())
+  }
+
+  override def getRole(displayName: String, accountId: String ,application: String): Future[Option[Role]] = {
+    collection.find(and(equal("displayName", displayName), equal("accountId", accountId),equal("application", application))).headOption()
+  }
+
+  //def getRolesForAccount(accountId: String, application: String) =
+
 
 }
