@@ -2,6 +2,9 @@ package com.joveo.model
 
 import com.joveo.constants.GenericConstants.ProductNames
 import com.joveo.dto.UserDTOs.ScopeDto
+//import com.joveo.model.main.formats
+import org.joda.time.DateTime
+import org.json4s.FieldSerializer
 import org.json4s.JsonAST.{JField, JString}
 //import org.json4s.JsonDSL.jobject2assoc
 import org.json4s.JsonDSL._
@@ -43,39 +46,46 @@ case class CDAppMetadata()
 
 // look in authenticate to find out if an
 object UserUtils {
-  implicit val formats = Serialization.formats(ShortTypeHints(List(classOf[CDScopeMetadata], classOf[MojoGoScopeMetadata],classOf[MojoProScopeMetadata], classOf[VPScopeMetadata])))
+  implicit val formats = Serialization.formats(ShortTypeHints(List(classOf[CDScopeMetadata], classOf[MojoGoScopeMetadata], classOf[MojoProScopeMetadata], classOf[VPScopeMetadata]))) + FieldSerializer[MojoGoScopeMetadata with ScopeMetadata]() + FieldSerializer[MojoProScopeMetadata with ScopeMetadata]() + FieldSerializer[CDScopeMetadata with ScopeMetadata]()
 
-  //  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
-  //
-    val productMetadataClassMap: Map[String, String] = Map(
-      ProductNames.MOJO_GO_PRODUCT_NAME -> getClassNameForSer(MojoGoScopeMetadata.getClass),
-      ProductNames.MOJO_PRO_PRODUCT_NAME -> getClassNameForSer(MojoProScopeMetadata.getClass),
-      ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> getClassNameForSer(CDScopeMetadata.getClass)
-    )
-    private def getClassNameForSer(clazz : Class[_<:Any]): String={
-      val className = clazz.getName.split('.').last
-      className.substring(0,className.length-1)
-    }
-    def serialize2(scopeDto: ScopeDto): ScopeMetadata = {
-      val scopeMetadataJson = scopeDto.metadata.asInstanceOf[JObject] ~ ("jsonClass"->productMetadataClassMap(scopeDto.productId.toLowerCase()))
-      val scopeMetadataStr = JsonMethods.compact(JsonMethods.render(scopeMetadataJson))
-      Serialization.read[ScopeMetadata](scopeMetadataStr)
-    }
+  val productMetadataClassNameMap: Map[String, String] = Map(
+    ProductNames.MOJO_GO_PRODUCT_NAME -> getClassNameForSer(MojoGoScopeMetadata.getClass),
+    ProductNames.MOJO_PRO_PRODUCT_NAME -> getClassNameForSer(MojoProScopeMetadata.getClass),
+    ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> getClassNameForSer(CDScopeMetadata.getClass)
+  )
+  val productMetadataClassSimpleNameMap: Map[String, String] = Map(
+    ProductNames.MOJO_GO_PRODUCT_NAME -> MojoGoScopeMetadata.getClass.getSimpleName,
+    ProductNames.MOJO_PRO_PRODUCT_NAME -> MojoProScopeMetadata.getClass.getSimpleName,
+    ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME -> CDScopeMetadata.getClass.getSimpleName
+  )
 
-//  def serialize(scopeDto: ScopeDto) = {
-////        extract[ScopeMetadata](parse(scopeDto.metadata))(productMetadataClassMap(scopeDto.productId.toLowerCase()))
-//    MojoProScopeMetadata(List())
-//  }
+  private def getClassNameForSer(clazz: Class[_ <: Any]): String = {
+    val className = clazz.getName.split('.').last
+    className.substring(0, className.length - 1)
+  }
+
+  def getClassNameForMongoSer(productName:String) = productMetadataClassSimpleNameMap.get(productName).map(_.dropRight(1))
+
+  def serialize2(scopeDto: ScopeDto): ScopeMetadata = {
+    val scopeMetadataJson = scopeDto.metadata.asInstanceOf[JObject] ~ ("jsonClass" -> productMetadataClassNameMap(scopeDto.productId.toLowerCase()))
+    val scopeMetadataStr = JsonMethods.compact(JsonMethods.render(scopeMetadataJson))
+    Serialization.read[ScopeMetadata](scopeMetadataStr)
+  }
+
+  def toJValue(scopeMetadata: ScopeMetadata): JValue = {
+    JsonMethods.parse(Serialization.write(scopeMetadata))
+  }
 }
 
-sealed class ScopeMetadata
+sealed class ScopeMetadata()
 
-case class MojoProScopeMetadata(clientIds: List[String]) extends ScopeMetadata
+case class MojoProScopeMetadata(clientIds: List[String], _t: Option[String] = UserUtils.getClassNameForMongoSer(ProductNames.MOJO_PRO_PRODUCT_NAME)) extends ScopeMetadata
 
 case class CDScopeMetadata(allowedMetrics: List[String],
                            savedSearches: List[SavedSearch] = List.empty,
                            barCharts: List[BarChartConfig],
-                           canWrite: Boolean = true) extends ScopeMetadata
+                           canWrite: Boolean = true,
+                           _t: Option[String] =UserUtils.getClassNameForMongoSer(ProductNames.CLIENT_DASHBOARD_PRODUCT_NAME)) extends ScopeMetadata
 
 case class MojoGoScopeMetadata(
                                 clientId: String,
@@ -84,7 +94,8 @@ case class MojoGoScopeMetadata(
                                 teamAccess: Option[List[String]],
                                 hierarchicalAccessScope: Option[Map[String, List[String]]],
                                 assignJobsBy: Option[String] = None,
-                                ssoEnabled: Boolean = false
+                                ssoEnabled: Boolean = false,
+                                _t: Option[String] =UserUtils.getClassNameForMongoSer(ProductNames.MOJO_GO_PRODUCT_NAME)
                               ) extends ScopeMetadata
 
 case class VPScopeMetadata(agencies: List[String],
@@ -149,31 +160,50 @@ case class DashBoardItem(
                           display: String,
                           client: Option[DashBoardItem] = None
                         )
-object main extends App{
-  import org.json4s.native.JsonMethods.parse
-  import org.json4s.DefaultFormats
-  import org.json4s.JValue
-  import org.json4s.DoubleJsonFormats.GenericFormat
-  implicit val formats: Formats = Serialization.formats(ShortTypeHints(List(classOf[Entity1], classOf[Entity2])))
-  import org.json4s.JsonDSL._
-  sealed class Entity
-  case class Entity1(name : String, value : Int) extends Entity
-  case class Entity2(name : String, value : Long) extends Entity
-  val x = parse(""" { "name" : "abu", "value" : 1 }  """)
-  val y = x.asInstanceOf[JObject] ~ ("jsonClass"->"main$Entity1")
-//  print(y)
-  val ser = write(Entity1("kush",4))
-  val jsonStr = JsonMethods.compact(JsonMethods.render(y))
-  val z = Serialization.read[Entity](jsonStr)
-  println(z)
-  //  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
+
+//object main extends App{
+//  import org.json4s.native.JsonMethods.parse
+//  import org.json4s.DefaultFormats
+//  import org.json4s.JValue
+//  import org.json4s.DoubleJsonFormats.GenericFormat
+////  implicit val formats: Formats = Serialization.formats(ShortTypeHints(List(classOf[Entity1], classOf[Entity2]))) + FieldSerializer[Entity1 with Entity]
+////  import org.json4s.JsonDSL._
+//  sealed trait Entity{
+//    final val _t = this.getClass.getName
+//  }
+//  case class Entity1(name : String, value : Int) extends Entity{
 //
-//  val mapping: Map[String, Manifest[_]] = Map(
-//    "entity1" -> implicitly[Manifest[Entity1]],
-//    "entity2" -> implicitly[Manifest[Entity2]]
-//  )
-//
-//  val input = parse(""" { "name" : "abu", "value" : 1 } """)
-//  val x = extract(input)(mapping("entity1")).asInstanceOf[]//Entity1("abu", 1)
-//  extract(input)(mapping("entity2")) //Entity2("abu", 1L)
-}
+//  }
+//  case class Entity2(name : String, value : Long) extends Entity
+//  val x = parse(""" { "name" : "abu", "value" : 1 }  """)
+//  val y = x.asInstanceOf[JObject] ~ ("jsonClass"->"main$Entity1")
+////  print(y)
+//  val ser = write(Entity1("kush",4))
+//  val jsonStr = JsonMethods.compact(JsonMethods.render(y))
+//  val z = Serialization.read[Entity](jsonStr)
+//  println(z)
+//  //  def extract[T](input : JValue)(implicit m : Manifest[T]) = input.extract[T]
+////
+////  val mapping: Map[String, Manifest[_]] = Map(
+////    "entity1" -> implicitly[Manifest[Entity1]],
+////    "entity2" -> implicitly[Manifest[Entity2]]
+////  )
+////
+////  val input = parse(""" { "name" : "abu", "value" : 1 } """)
+////  val x = extract(input)(mapping("entity1")).asInstanceOf[]//Entity1("abu", 1)
+////  extract(input)(mapping("entity2")) //Entity2("abu", 1L)
+//}
+
+//object main2 extends App {
+//  case class Door(name:String) extends Thing
+//  sealed class Thing {
+//    val created: DateTime = DateTime.now
+//  }
+//  val qwerty = MojoProScopeMetadata(List())
+//  print(qwerty)
+////  implicit val formats = DefaultFormats + FieldSerializer[Door with Thing]()
+////
+////  val obj = new Door("dooor")
+////  val x = write(obj)
+////  print(x)
+//}

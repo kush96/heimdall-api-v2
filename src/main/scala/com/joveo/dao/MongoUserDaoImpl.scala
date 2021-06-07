@@ -5,7 +5,7 @@ import com.joveo.model.{Permission, User}
 import org.mongodb.scala.MongoCollection
 import org.mongodb.scala.model.Filters
 import org.mongodb.scala.model.Filters.equal
-import org.mongodb.scala.model.Updates.{combine, set}
+import org.mongodb.scala.model.Updates.{combine, push, set}
 
 import scala.concurrent.{ExecutionContext, Future}
 
@@ -22,10 +22,10 @@ case class MongoUserDaoImpl(collection: MongoCollection[User])(implicit ec: Exec
     collection.find(equal(EMAIL_FIELD, email)).headOption()
   }
 
-  override def updateUser(user: User): Future[String] = {
+  override def addScopeForUser(user: User): Future[String] = {
     collection.updateOne(Filters.equal(EMAIL_FIELD, user.email),
       combine(
-        set("scopes", user.scopes)
+        push("scopes", user.scopes)
       )
     ).toFuture().map(isInserted => isInserted.wasAcknowledged() match {
       case true => user.id

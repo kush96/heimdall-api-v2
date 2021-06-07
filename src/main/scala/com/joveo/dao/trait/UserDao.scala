@@ -12,5 +12,5 @@ trait UserDao {
 
   def getUser(email: String): Future[Option[User]]
 
-  def updateUser(user : User): Future[String]
+  def addScopeForUser(user : User): Future[String]
 }
