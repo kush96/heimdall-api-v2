@@ -25,6 +25,7 @@ case class User(
                  displayName: String,
                  scopes: List[Scope],
                  profilePictureUrl: String,
+                 // TODO : Make similar ser/deser to ScopeMetadata
                  appMetadata: Map[String, String]
                )
 
@@ -38,11 +39,15 @@ case class Scope(
                   status: String
                 )
 
+sealed class AppMetadata()
+
 case class MojoProAppMetadata()
 
 case class MojoGoAppMetadata()
 
 case class CDAppMetadata()
+
+case class VpAppMetadata()
 
 /* scope metadata classes */
 
