@@ -18,7 +18,7 @@ case class MongoUserDaoImpl(collection: MongoCollection[User])(implicit ec: Exec
     } yield user.id
   }
 
-  override def getUser(email: String): Future[Option[User]] = {
+  override def getFullUser(email: String): Future[Option[User]] = {
     collection.find(equal(EMAIL_FIELD, email)).headOption()
   }
 

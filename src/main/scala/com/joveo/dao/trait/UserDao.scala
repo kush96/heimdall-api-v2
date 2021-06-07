@@ -10,7 +10,7 @@ trait UserDao {
 
   def addUsers(users: List[User]): Future[List[String]]
 
-  def getUser(email: String): Future[Option[User]]
+  def getFullUser(email: String): Future[Option[User]]
 
   def addScopeForUser(user : User): Future[String]
 }

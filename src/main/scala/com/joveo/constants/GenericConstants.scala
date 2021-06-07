@@ -8,4 +8,8 @@ object GenericConstants {
     val CLIENT_DASHBOARD_PRODUCT_NAME = "clientdashboard"
     val VENDOR_PORTAL_PRODUCT_NAME = "vendorportal"
   }
+  object ErrorTypes{
+    val RESOURCE_UNAVAILABLE_ERROR = "resource-unavailable_error"
+    val RESOURCE_ALREADY_EXISTS = "api-error"
+  }
 }

@@ -57,6 +57,6 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.3",
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % "2.11.3",
   "io.spray" %% "spray-json" % "1.3.2",
-  "com.joveo" %% "apiutils" % "1.0.1-SNAPSHOT",
+  "com.joveo" %% "apiutils" % "1.0.0",
 )
 
