@@ -33,7 +33,7 @@ class MongoPermissionDaoImpl(collection: MongoCollection[Permission])(implicit e
   override def updatePermission(permission: Permission) = {
     collection.updateOne(Filters.equal("permissionName", permission.permissionName),
       combine(
-        set("isAllowed", true),
+        set("isAllowed", permission.isAllowed),
         set("description", permission.description)
       )
     ).toFuture().map(_.wasAcknowledged())

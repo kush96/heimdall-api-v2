@@ -26,7 +26,7 @@ libraryDependencies ++= Seq(
 
   "ch.qos.logback" % "logback-classic" % "1.2.3",
 
-  "org.mongodb.scala" %% "mongo-scala-driver" % "2.4.0",
+  "org.mongodb.scala" %% "mongo-scala-driver" % "2.7.0",
   "joda-time" % "joda-time" % "2.10",
   "org.joda" % "joda-money" % "1.0.1",
 
@@ -57,6 +57,6 @@ libraryDependencies ++= Seq(
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.11.3",
   "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % "2.11.3",
   "io.spray" %% "spray-json" % "1.3.2",
-  "com.joveo" %% "apiutils" % "1.0.1-SNAPSHOT",
+  "com.joveo" %% "apiutils" % "1.0.0",
 )
 

@@ -1,10 +1,10 @@
 package com.joveo.api
 
 
-import com.joveo.Application.joveoSecureEndpoint
+//import com.joveo.Application.joveoSecureEndpoint
 import com.joveo.constants.PermissionContants
 import com.joveo.dto.PermissionDTOs.PermissionDto
-import com.joveo.fna_api_utilities.core.JoveoTapir.{jsonBody, path}
+import com.joveo.fna_api_utilities.core.JoveoTapir.{joveoSecureEndpoint, jsonBody, path}
 import com.joveo.service.PermissionService
 import kamon.util.SameThreadExecutionContext.logger
 import org.json4s.{Formats, Serialization}
@@ -27,7 +27,7 @@ class PermissionApi(permissionService: PermissionService)(implicit
                                                           ec: ExecutionContext) {
 
   private val permissionPath = "permission"
-  private val permissionEndpoint = joveoSecureEndpoint.in(permissionPath)
+  private val permissionEndpoint = joveoSecureEndpoint(permissionPath,1)
 
   val addPermission = permissionEndpoint.post
     .in(jsonBody[PermissionDto])

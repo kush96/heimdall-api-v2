@@ -8,7 +8,9 @@ trait UserDao {
 
   def addUser(user: User): Future[String]
 
-  def getUser(email: String): Future[Option[User]]
+  def addUsers(users: List[User]): Future[List[String]]
 
-  def updateUser(user : User): Future[String]
+  def getFullUser(email: String): Future[Option[User]]
+
+  def addScopeForUser(user : User): Future[String]
 }
